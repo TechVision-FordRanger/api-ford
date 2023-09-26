@@ -12,7 +12,7 @@ async function bootstrap() {
       const ops = [];
 
       for (let i = 10000; i < 99999; i++) {
-        ops.push("http://localhost:" + i);
+        ops.push("http://localhost:" + i + "/");
       }
 
       const allowedOrigins = ops;
