@@ -9,13 +9,13 @@ async function bootstrap() {
 
   const corsOptions: CorsOptions = {
     origin: function (origin, callback) {
-      // const ops = [];
+      const ops = ["http://localhost:56068"];
 
-      // for (let i = 10000; i < 99999; i++) {
-      //   ops.push("http://localhost:" + i + "/");
-      // }
+      for (let i = 10000; i < 99999; i++) {
+        ops.push("http://localhost:" + i + "/");
+      }
 
-      const allowedOrigins = ["http://localhost:61357"];
+      const allowedOrigins = ops;
 
       if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
         callback(null, true);
