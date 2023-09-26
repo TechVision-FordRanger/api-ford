@@ -9,10 +9,7 @@ async function bootstrap() {
 
   const corsOptions: CorsOptions = {
     origin: function (origin, callback) {
-      const allowedOrigins = [
-        "http://localhost:55384",
-        "http://rm86750-api-ford.azurewebsites.ne",
-      ];
+      const allowedOrigins = ["http://localhost:55384"];
 
       if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
         callback(null, true);
@@ -20,7 +17,7 @@ async function bootstrap() {
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true,
+    credentials: false,
   };
 
   const config = new DocumentBuilder()
