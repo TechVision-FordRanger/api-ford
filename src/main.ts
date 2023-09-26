@@ -9,21 +9,19 @@ async function bootstrap() {
 
   const corsOptions: CorsOptions = {
     origin: function (origin, callback) {
-      const ops = ["http://localhost:56068"];
-
-      for (let i = 10000; i < 99999; i++) {
-        ops.push("http://localhost:" + i + "/");
-      }
-
-      const allowedOrigins = ops;
-
-      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
+      // const ops = ["http://localhost:56068"];
+      // for (let i = 10000; i < 99999; i++) {
+      //   ops.push("http://localhost:" + i);
+      // }
+      // const allowedOrigins = ops;
+      // if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      //   callback(null, true);
+      // } else {
+      //   callback(new Error("Not allowed by CORS"));
+      // }
+      callback(null, true);
     },
-    credentials: true,
+    credentials: false,
   };
 
   const config = new DocumentBuilder()
