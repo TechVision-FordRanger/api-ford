@@ -9,7 +9,13 @@ async function bootstrap() {
 
   const corsOptions: CorsOptions = {
     origin: function (origin, callback) {
-      const allowedOrigins = ["http://localhost:55384"];
+      const ops = [];
+
+      for (let i = 10000; i < 99999; i++) {
+        ops.push("http://localhost:" + i);
+      }
+
+      const allowedOrigins = ops;
 
       if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
         callback(null, true);
@@ -37,6 +43,6 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
-  await app.listen(3000);
+  await app.listen(3000 || process.env.PORT);
 }
 bootstrap();
