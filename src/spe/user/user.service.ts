@@ -14,7 +14,7 @@ export class UserService {
       }
       return new DefaultResponseDto(true, 'usuário encontrado', user);
     } catch (error) {
-      return new DefaultResponseDto(false, 'erro', error);
+      return new DefaultResponseDto(false, 'erro', null);
     }
   }
 }

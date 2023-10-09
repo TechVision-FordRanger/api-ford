@@ -34,7 +34,7 @@ export class OnboardingService {
         newUser,
       );
     } catch (error) {
-      return new DefaultResponseDto(false, 'Erro ao criar usuário', error);
+      return new DefaultResponseDto(false, 'Erro ao criar usuário', 'erro');
     }
   }
 

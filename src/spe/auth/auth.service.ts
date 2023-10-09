@@ -20,7 +20,7 @@ export class AuthService {
 
       return new DefaultResponseDto(true, 'sucesso!', user);
     } catch (error) {
-      return new DefaultResponseDto(false, 'erro ao fazer log in', error);
+      return new DefaultResponseDto(false, 'erro ao fazer log in', null);
     }
   }
 }
