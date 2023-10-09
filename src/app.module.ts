@@ -9,6 +9,7 @@ import { RsUserModule } from "./resource/rs-user/rs-user.module";
 import { User } from "./resource/rs-user/entities/rs-user.entity";
 import { OnboardingModule } from "./spe/onboarding/onboarding.module";
 import { AuthModule } from "./spe/auth/auth.module";
+import { UserModule } from './spe/user/user.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { AuthModule } from "./spe/auth/auth.module";
     RsUserModule,
     OnboardingModule,
     AuthModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
