@@ -14,6 +14,18 @@ export class OnboardingService {
       createRsUserDto.uuid = uuid();
       createRsUserDto.password = 'onboarding';
 
+      const emailExists = await this.rsUserService.findOneByEmail(
+        createRsUserDto.email,
+      );
+
+      if (emailExists) {
+        return new DefaultResponseDto(
+          false,
+          'Email já cadastrado',
+          'Email já cadastrado',
+        );
+      }
+
       const newUser = await this.rsUserService.create(createRsUserDto);
 
       return new DefaultResponseDto(
